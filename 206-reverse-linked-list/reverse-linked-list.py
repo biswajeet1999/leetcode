@@ -36,14 +36,27 @@
 #         return head, newHead
 
 # O(n) time | O(1) space
+# class Solution:
+#     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+#         prevNode = None
+#         curNode = head
+
+#         while curNode:
+#             nextNode = curNode.next
+#             curNode.next = prevNode
+#             prevNode = curNode
+#             curNode = nextNode
+#         return prevNode
+
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        prevNode = None
-        curNode = head
-
-        while curNode:
-            nextNode = curNode.next
-            curNode.next = prevNode
-            prevNode = curNode
-            curNode = nextNode
-        return prevNode
+        return self.reverseListUtil(head)[1]
+    
+    def reverseListUtil(self, head):
+        if head is None or head.next == None:
+            return head, head
+        
+        lastNode, newHead = self.reverseListUtil(head.next)
+        lastNode.next = head
+        head.next = None
+        return head, newHead
