@@ -7,14 +7,14 @@ class Solution:
         maxJump = nums[0]
         minJump = 0
 
-        for idx in range(1, len(nums) - 1):
+        for idx in range(1, len(nums)):
             steps -= 1
             maxJump = max(maxJump, nums[idx] + idx)
 
-            if steps == 0:
+            if steps == 0 or idx == len(nums) - 1:
                 minJump += 1
                 steps = maxJump - idx
         
-        return minJump + 1
+        return minJump
 
         
