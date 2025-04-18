@@ -18,8 +18,7 @@ class Solution:
 
         while n:
             digit = n % 10
-            digit = digit ** 2
-            output += digit
+            output += (digit ** 2)
             n = n // 10
         return output
             
