@@ -9,8 +9,8 @@ class Solution:
 
         while len(minHeap) > 0:
             delay, curVertex = heapq.heappop(minHeap)
-            # if visited[curVertex] == True:
-            #     continue
+            if visited[curVertex] == True:
+                continue
             
             visited[curVertex] = True
 
