@@ -51,11 +51,12 @@ class Solution:
         left = 0
         right = len(height) - 1
 
-        while left <= right:
+        while left < right:
             leftMax = max(leftMax, height[left])
             maxRight = max(maxRight, height[right])
 
-            if height[left] < height[right]:
+            # if height[left] < height[right]:
+            if leftMax < maxRight:
                 maxWater += (leftMax - height[left])
                 left += 1
             else:
