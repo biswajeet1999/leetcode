@@ -18,6 +18,6 @@ class Solution:
             if intervals[idx][0] < maxEndPoint:
                 count += 1
             else:
-                maxEndPoint = max(maxEndPoint, intervals[idx][1])
+                maxEndPoint = intervals[idx][1]
         
         return count
