@@ -1,6 +1,6 @@
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
-        if len(points) <= 0:
+        if len(points) <= 1:
             return 0
         visited = {tuple(point): False for point in points}
 
