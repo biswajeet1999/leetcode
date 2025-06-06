@@ -17,7 +17,7 @@ class Solution:
             for child, childDelay in graph[curVertex]:
                 if visited[child] == True:
                     continue
-                curDelay = timeTaken[curVertex] + childDelay
+                curDelay = delay + childDelay
                 if curDelay < timeTaken[child]:
                     timeTaken[child] = curDelay
                     heapq.heappush(minHeap, [curDelay, child])
