@@ -52,7 +52,6 @@ class LFUCache:
 
             if (self.freqList[self.leastFreq].isEmpty()):
                 del self.freqList[self.leastFreq]
-                self.leastFreq = min(self.freqList.keys()) if len(self.freqList.keys()) else 1
             self.size -= 1
         
         node = Node(key, value)
